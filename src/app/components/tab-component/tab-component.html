@@ -1,10 +1,10 @@
-<div class="tabs flex gap-2 border-b border-gray-300 mb-4">
+<div class="tabs flex gap-2 border-b border-gray-300 mb-4 overflow-x-auto scrollbar-thin scrollbar-thumb-gray-500">
   <button
     *ngFor="let index of indices"
     (click)="selectIndex(index)"
     [class.border-b-2]="activeIndex() === index"
     [class.border-cyan-500]="activeIndex() === index"
-    class="px-4 py-2 text-white-700 hover:text-cyan-500 cursor-pointer"
+    class="px-4 py-2 text-white-700 hover:text-cyan-500 whitespace-nowrap flex-shrink-0 cursor-pointer"
   >
     {{ index.name }}
   </button>

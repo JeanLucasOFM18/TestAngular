@@ -1,10 +1,16 @@
 <main class="m-4 p-4">
-    <app-search-bar-component></app-search-bar-component>
-    <app-header-component></app-header-component>
-    <div class="flex gap-6 m-4 justify-between">
-        <app-chart-component></app-chart-component>
-        <app-summary-component></app-summary-component>
+  <app-search-bar-component></app-search-bar-component>
+  <app-header-component></app-header-component>
+  <div class="flex flex-col lg:flex-row gap-6 justify-between">
+    <div class="w-full lg:w-3/5">
+      <app-chart-component></app-chart-component>
     </div>
+    <div class="w-full lg:w-2/5">
+      <app-summary-component></app-summary-component>
+    </div>
+  </div>
+  <div class="flex flex-col gap-4">
     <app-tab-component></app-tab-component>
     <app-instrument-list-component></app-instrument-list-component>
+  </div>
 </main>

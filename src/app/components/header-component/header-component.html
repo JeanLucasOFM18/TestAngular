@@ -1,4 +1,12 @@
-<div class="mt-4" *ngIf="info">
-    <h2 class="text-lg font-bold">{{ info.data.info.name }}, {{ info.data.info.countryName.toUpperCase() }}</h2>
-    <p>Valor Actual: {{ info.data.price.tend === 'up' ? '↑' : info.data.price.tend === 'down' ? '↓' : '→' }} {{ info.data.price.lastPrice | number:'1.2-2' }} </p>
+<div class="mt-4 p-2 sm:p-4 rounded-md text-white" *ngIf="info">
+  <h2 class="text-base sm:text-lg font-bold break-words">
+    {{ info.data.info.name }}, {{ info.data.info.countryName.toUpperCase() }}
+  </h2>
+  <p class="text-sm sm:text-base mt-1">
+    Valor Actual: 
+    <span class="font-semibold">
+      {{ info.data.price.tend === 'up' ? '↑' : info.data.price.tend === 'down' ? '↓' : '→' }} 
+      {{ info.data.price.lastPrice | number:'1.2-2' }}
+    </span>
+  </p>
 </div>

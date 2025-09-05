@@ -1,5 +1,12 @@
-<p-chart type="line" [data]="data" [options]="options" class="h-[20rem] w-[60rem]"></p-chart>
-<div class="flex gap-2 mt-2">
+<div class="w-full">
+  <p-chart 
+    type="line" 
+    [data]="data" 
+    [options]="options" 
+    class="h-60 w-full lg:w-[60rem] md:w-[40rem]">
+  </p-chart>
+</div>
+<div class="flex flex-wrap gap-2 mt-8">
   <button
     *ngFor="let p of periods"
     (click)="appState.setPeriod(p)"
