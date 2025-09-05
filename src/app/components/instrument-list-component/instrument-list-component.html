@@ -16,9 +16,9 @@
         <ng-template #body let-instrument>
           <tr (click)="selectInstrument(instrument)"
               [ngClass]="{'bg-blue-100': appState.selectedInstrument() === instrument}">
-            <td>{{ instrument.shortName }}</td>
-            <td>{{ instrument.lastPrice | number:'1.2-2' }}</td>
-            <td>{{ instrument.volumeMoney / 1_000_000 | number:'1.2-2' }}</td>
+            <td class="text-white">{{ instrument.shortName }}</td>
+            <td class="text-white">{{ instrument.lastPrice | number:'1.2-2' }}</td>
+            <td class="text-white">{{ instrument.volumeMoney / 1_000_000 | number:'1.2-2' }}</td>
             <td [ngClass]="instrument.pctDay > 0 ? 'text-green-500' : (instrument.pctDay < 0 ? 'text-red-500' : 'text-white')">
               {{ instrument.pctDay > 0 ? '+' : '' }}{{ instrument.pctDay | number:'1.2-2' }}%
             </td>
@@ -51,9 +51,9 @@
         <ng-template #body let-instrument>
           <tr (click)="selectInstrument(instrument)"
               [ngClass]="{'bg-blue-100': appState.selectedInstrument() === instrument}">
-            <td>{{ instrument.shortName }}</td>
-            <td>{{ instrument.lastPrice | number:'1.2-2' }}</td>
-            <td>{{ instrument.volumeMoney / 1_000_000 | number:'1.2-2' }}</td>
+            <td class="text-white">{{ instrument.shortName }}</td>
+            <td class="text-white">{{ instrument.lastPrice | number:'1.2-2' }}</td>
+            <td class="text-white">{{ instrument.volumeMoney / 1_000_000 | number:'1.2-2' }}</td>
             <td [ngClass]="instrument.pctDay > 0 ? 'text-green-500' : (instrument.pctDay < 0 ? 'text-red-500' : 'text-white')">
               {{ instrument.pctDay > 0 ? '+' : '' }}{{ instrument.pctDay | number:'1.2-2' }}%
             </td>

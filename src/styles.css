@@ -1,2 +1,54 @@
 /* You can add global styles to this file, and also import other style files */
 @import "tailwindcss";
+
+html, body {
+  background-color: black;
+  color: white;
+}
+
+:root {
+  --surface-ground: #000000;
+  --surface-card: #111111;   
+  --text-color: #ffffff;     
+  --text-color-secondary: #bbbbbb; 
+  --primary-color: #06b6d4;  
+}
+
+.p-datatable {
+  background-color: #000 !important;
+}
+
+.p-datatable th,
+.p-datatable td {
+  background-color: #111 !important;
+}
+
+.p-inputtext {
+  background-color: #111 !important; 
+  color: #fff !important;           
+  border: 1px solid #444 !important; 
+}
+
+.p-float-label label {
+  color: #bbb !important;
+}
+
+.p-inputtext:focus {
+  border-color: #06b6d4 !important;
+  box-shadow: 0 0 0 1px #06b6d4 !important;
+}
+
+.suggestions-dark {
+  background-color: #000 !important;
+  color: #fff !important;
+  border: 1px solid #444 !important;
+}
+
+.suggestions-dark div:hover {
+  background-color: #333 !important;
+}
+
+.p-datatable-thead > tr > th {
+  background-color: #111 !important; 
+  color: #fff !important;            
+}
