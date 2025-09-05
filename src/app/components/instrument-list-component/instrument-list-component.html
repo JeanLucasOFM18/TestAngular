@@ -1,0 +1,95 @@
+<div class="card flex gap-4">
+  <p-table [value]="leftInstruments" [tableStyle]="{'width': '40rem'}">
+    <ng-template #header>
+      <tr>
+        <th style="width:20%"><div class="flex items-center gap-2">Nombre</div></th>
+        <th pSortableColumn="lastPrice" style="width:20%">
+          <div class="flex items-center gap-2">Último* <p-sortIcon field="lastPrice"></p-sortIcon></div>
+        </th>
+        <th pSortableColumn="volumeMoney" style="width:20%">
+          <div class="flex items-center gap-2">Monto (MM) <p-sortIcon field="volumeMoney"></p-sortIcon></div>
+        </th>
+        <th pSortableColumn="pctDay" style="width:20%">
+          <div class="flex items-center gap-2">Var Día <p-sortIcon field="pctDay"></p-sortIcon></div>
+        </th>
+        <th pSortableColumn="pct30D" style="width:20%">
+          <div class="flex items-center gap-2">Var 30d** <p-sortIcon field="pct30D"></p-sortIcon></div>
+        </th>
+        <th pSortableColumn="pctCY" style="width:20%">
+          <div class="flex items-center gap-2">Año actual <p-sortIcon field="pctCY"></p-sortIcon></div>
+        </th>
+        <th pSortableColumn="pct1Y" style="width:20%">
+          <div class="flex items-center gap-2">12 Meses <p-sortIcon field="pct1Y"></p-sortIcon></div>
+        </th>
+      </tr>
+    </ng-template>
+
+    <ng-template #body let-instrument>
+      <tr (click)="selectInstrument(instrument)"
+          [ngClass]="{'bg-blue-100': appState.selectedInstrument() === instrument}">
+        <td>{{ instrument.shortName }}</td>
+        <td>{{ instrument.lastPrice | number:'1.2-2' }}</td>
+        <td>{{ instrument.volumeMoney / 1_000_000 | number:'1.2-2' }}</td>
+        <td [ngClass]="instrument.pctDay > 0 ? 'text-green-500' : (instrument.pctDay < 0 ? 'text-red-500' : 'text-white')">
+          {{ instrument.pctDay > 0 ? '+' : '' }}{{ instrument.pctDay | number:'1.2-2' }}%
+        </td>
+        <td [ngClass]="instrument.pct30D > 0 ? 'text-green-500' : (instrument.pct30D < 0 ? 'text-red-500' : 'text-white')">
+          {{ instrument.pct30D > 0 ? '+' : '' }}{{ instrument.pct30D | number:'1.2-2' }}%
+        </td>
+        <td [ngClass]="instrument.pctCY > 0 ? 'text-green-500' : (instrument.pctCY < 0 ? 'text-red-500' : 'text-white')">
+          {{ instrument.pctCY > 0 ? '+' : '' }}{{ instrument.pctCY | number:'1.2-2' }}%
+        </td>
+        <td [ngClass]="instrument.pct1Y > 0 ? 'text-green-500' : (instrument.pct1Y < 0 ? 'text-red-500' : 'text-white')">
+          {{ instrument.pct1Y > 0 ? '+' : '' }}{{ instrument.pct1Y | number:'1.2-2' }}%
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+
+  <p-table [value]="rightInstruments" [tableStyle]="{'width': '40rem'}">
+    <ng-template #header>
+      <tr>
+        <th style="width:20%"><div class="flex items-center gap-2">Nombre</div></th>
+        <th pSortableColumn="lastPrice" style="width:20%">
+          <div class="flex items-center gap-2">Último* <p-sortIcon field="lastPrice"></p-sortIcon></div>
+        </th>
+        <th pSortableColumn="volumeMoney" style="width:20%">
+          <div class="flex items-center gap-2">Monto (MM) <p-sortIcon field="volumeMoney"></p-sortIcon></div>
+        </th>
+        <th pSortableColumn="pctDay" style="width:20%">
+          <div class="flex items-center gap-2">Var Día <p-sortIcon field="pctDay"></p-sortIcon></div>
+        </th>
+        <th pSortableColumn="pct30D" style="width:20%">
+          <div class="flex items-center gap-2">Var 30d** <p-sortIcon field="pct30D"></p-sortIcon></div>
+        </th>
+        <th pSortableColumn="pctCY" style="width:20%">
+          <div class="flex items-center gap-2">Año actual <p-sortIcon field="pctCY"></p-sortIcon></div>
+        </th>
+        <th pSortableColumn="pct1Y" style="width:20%">
+          <div class="flex items-center gap-2">12 Meses <p-sortIcon field="pct1Y"></p-sortIcon></div>
+        </th>
+      </tr>
+    </ng-template>
+
+    <ng-template #body let-instrument>
+      <tr (click)="selectInstrument(instrument)"
+          [ngClass]="{'bg-blue-100': appState.selectedInstrument() === instrument}">
+        <td>{{ instrument.shortName }}</td>
+        <td>{{ instrument.lastPrice | number:'1.2-2' }}</td>
+        <td>{{ instrument.volumeMoney / 1_000_000 | number:'1.2-2' }}</td>
+        <td [ngClass]="instrument.pctDay > 0 ? 'text-green-500' : (instrument.pctDay < 0 ? 'text-red-500' : 'text-white')">
+          {{ instrument.pctDay > 0 ? '+' : '' }}{{ instrument.pctDay | number:'1.2-2' }}%
+        </td>
+        <td [ngClass]="instrument.pct30D > 0 ? 'text-green-500' : (instrument.pct30D < 0 ? 'text-red-500' : 'text-white')">
+          {{ instrument.pct30D > 0 ? '+' : '' }}{{ instrument.pct30D | number:'1.2-2' }}%
+        </td>
+        <td [ngClass]="instrument.pctCY > 0 ? 'text-green-500' : (instrument.pctCY < 0 ? 'text-red-500' : 'text-white')">
+          {{ instrument.pctCY > 0 ? '+' : '' }}{{ instrument.pctCY | number:'1.2-2' }}%
+        </td>
+        <td [ngClass]="instrument.pct1Y > 0 ? 'text-green-500' : (instrument.pct1Y < 0 ? 'text-red-500' : 'text-white')">
+          {{ instrument.pct1Y > 0 ? '+' : '' }}{{ instrument.pct1Y | number:'1.2-2' }}%
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

@@ -1,0 +1,9 @@
+<p-floatlabel variant="on" class="relative">
+  <input pInputText id="on_label" [(ngModel)]="term" autocomplete="off" (input)="inputChange()" (focus)="inputChange()" class="w-full"/>
+  <label for="on_label">🔎 Busca un instrumento</label>
+  <div *ngIf="suggestions.length > 0" class="absolute bg-black border border-gray-300 w-full max-h-52 overflow-y-auto mt-1 z-50 shadow-md rounded-md">
+    <div *ngFor="let s of suggestions" (click)="selectSuggestion(s)" class="px-3 py-2 cursor-pointer hover:bg-gray-700">
+        {{ s.codeInstrument }}
+    </div>
+  </div>
+</p-floatlabel>

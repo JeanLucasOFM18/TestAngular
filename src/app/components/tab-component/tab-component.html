@@ -1,0 +1,11 @@
+<div class="tabs flex gap-2 border-b border-gray-300 mb-4">
+  <button
+    *ngFor="let index of indices"
+    (click)="selectIndex(index)"
+    [class.border-b-2]="activeIndex() === index"
+    [class.border-cyan-500]="activeIndex() === index"
+    class="px-4 py-2 text-white-700 hover:text-cyan-500 cursor-pointer"
+  >
+    {{ index.name }}
+  </button>
+</div>

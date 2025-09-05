@@ -1,0 +1,17 @@
+<div class="mr-16 w-80" *ngIf="summary">
+  <h2 class="text-white font-bold">RESUMEN</h2>
+  <hr class="border-t border-white my-2">
+  <p class="flex justify-between"><span>MERCADO</span><span>{{ summary.data.info.marketName }}</span></p>
+  <p class="flex justify-between"><span>APERTURA:</span><span>{{ summary.data.price.openPrice | number:'1.2-2' }}</span></p>
+  <p class="flex justify-between"><span>CIERRE ANTERIOR:</span><span>{{ summary.data.price.closePrice | number:'1.2-2' }}</span> </p>
+  <p class="flex justify-between"><span>MÁXIMO DIARIO:</span><span>{{ summary.data.price.maxDay | number:'1.2-2' }}</span></p>
+  <p class="flex justify-between"><span>MÍNIMO DIARIO:</span><span>{{ summary.data.price.minDay | number:'1.2-2' }}</span></p>
+  <p class="flex justify-between"><span>MÁXIMO 52 SEMANAS:</span><span>{{ summary.data.price.max52W | number:'1.2-2' }}</span></p>
+  <p class="flex justify-between"><span>MÍNIMO 52 SEMANAS:</span><span>{{ summary.data.price.min52W | number:'1.2-2' }}</span></p>
+  <hr class="border-t border-white my-2">
+  <p class="font-bold">VARIACIÓN %</p>
+  <hr class="border-t border-white my-2">
+  <p class="flex justify-between" [ngClass]="{'text-green-500': summary.data.price.pct30D > 0, 'text-red-500': summary.data.price.pct30D < 0,'text-gray-500': summary.data.price.pct30D === 0}"><span>1 MES:</span><span>{{ summary.data.price.pct30D > 0 ? '+' : ''}}{{ summary.data.price.pct30D | number:'1.2-2' }}%</span></p>
+  <p class="flex justify-between" [ngClass]="{'text-green-500': summary.data.price.pctRelW52 > 0,'text-red-500': summary.data.price.pctRelW52 < 0, 'text-gray-500': summary.data.price.pctRelW52 === 0}"><span>1 AÑO:</span><span>{{ summary.data.price.pctRelW52 > 0 ? '+' : ''}}{{ summary.data.price.pctRelW52 | number:'1.2-2' }}%</span></p>
+  <p class="flex justify-between" [ngClass]="{'text-green-500': summary.data.price.pctRelCY > 0,'text-red-500': summary.data.price.pctRelCY < 0,'text-gray-500': summary.data.price.pctRelCY === 0}"><span>AÑO A LA FECHA:</span><span>{{ summary.data.price.pctRelCY > 0 ? '+' : ''}}{{ summary.data.price.pctRelCY | number:'1.2-2' }}%</span></p>
+</div>

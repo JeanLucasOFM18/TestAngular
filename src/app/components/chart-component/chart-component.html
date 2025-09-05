@@ -1,0 +1,11 @@
+<p-chart type="line" [data]="data" [options]="options" class="h-[20rem] w-[60rem]"></p-chart>
+<div class="flex gap-2 mt-2">
+  <button
+    *ngFor="let p of periods"
+    (click)="appState.setPeriod(p)"
+    [class.bg-cyan-500]="p === appState.selectedPeriod()"
+    class="px-3 py-1 rounded-md border border-cyan-500 text-white hover:bg-cyan-400 cursor-pointer"
+  >
+    {{ p }}
+  </button>
+</div>
